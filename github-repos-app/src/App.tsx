@@ -43,15 +43,13 @@ const App = () => {
       }
 
       setData(data);
-
-      setLoading(false);
     } catch (error) {
       if (axios.isAxiosError(error)) {
         setError(error.response?.data.message);
       } else {
         setError('An unexpected error occurred');
       }
-
+    } finally {
       setLoading(false);
     }
   };
